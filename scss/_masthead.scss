@@ -1,4 +1,5 @@
 .masthead {
+  color: #fff;
   min-height: 30rem;
   position: relative;
   display: table;
@@ -11,14 +12,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   h1 {
-    font-size: 4rem;
+    font-size: 40px;
     margin: 0;
     padding: 0;
+  }
+  .headline {
+    font-size: 26px;
   }
   @media (min-width: 992px) {
     height: 100vh;
     h1 {
-      font-size: 5.5rem;
+      font-size: 2.6rem;
     }
   }
 }

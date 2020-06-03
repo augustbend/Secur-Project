@@ -10,14 +10,23 @@ body {
 
 // Custom Button Size
 .btn-xl {
-  padding: 1.25rem 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-radius: 50px;
+  font-size: 22px;
+  line-height: 2;
+  font-weight: 300 !important;
+  box-shadow: none !important;
 }
 
 // Content Section
 .content-section {
-  padding-top: 7.5rem;
+  //padding-top: 7.5rem;
   padding-bottom: 7.5rem;
 }
+
+
+
 
 .content-section-heading {
   h2 {
@@ -28,6 +37,8 @@ body {
     text-transform: uppercase;
   }
 }
+
+
 
 // Typography
 h1,
@@ -87,3 +98,13 @@ h6 {
     font-weight: 800;
   }
 }
+.modal-content {
+  border-radius: 20px;
+}
+.modal-body {
+  padding: 2rem 2.5rem;
+}
+
+
+
+

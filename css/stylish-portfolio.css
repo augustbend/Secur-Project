@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Stylish Portfolio v5.0.7 (https://startbootstrap.com/template-overviews/stylish-portfolio)
- * Copyright 2013-2019 Start Bootstrap
+ * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/blob/master/LICENSE)
  */
 
@@ -11,15 +11,20 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: 'Lato';
 }
 
 .btn-xl {
-  padding: 1.25rem 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-radius: 50px;
+  font-size: 22px;
+  line-height: 2;
+  font-weight: 300 !important;
+  box-shadow: none !important;
 }
 
 .content-section {
-  padding-top: 7.5rem;
   padding-bottom: 7.5rem;
 }
 
@@ -85,7 +90,16 @@ h6 {
   font-weight: 800;
 }
 
+.modal-content {
+  border-radius: 20px;
+}
+
+.modal-body {
+  padding: 2rem 2.5rem;
+}
+
 .masthead {
+  color: #fff;
   min-height: 30rem;
   position: relative;
   display: table;
@@ -100,9 +114,13 @@ h6 {
 }
 
 .masthead h1 {
-  font-size: 4rem;
+  font-size: 40px;
   margin: 0;
   padding: 0;
+}
+
+.masthead .headline {
+  font-size: 26px;
 }
 
 @media (min-width: 992px) {
@@ -110,7 +128,7 @@ h6 {
     height: 100vh;
   }
   .masthead h1 {
-    font-size: 5.5rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -123,7 +141,7 @@ h6 {
   height: 100%;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: #1D809F;
+  background: #3DAE2B;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -202,13 +220,20 @@ h6 {
 
 .service-icon {
   background-color: #fff;
-  color: #1D809F;
+  color: #3DAE2B;
   height: 7rem;
   width: 7rem;
   display: block;
   line-height: 7.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+#services .container {
+  background-color: #fff;
+  border-radius: 0 0 20px 20px;
+  color: #00111C;
+  padding: 40px 80px;
 }
 
 .callout {
@@ -286,10 +311,22 @@ h6 {
     clip-path: inset(2rem);
   }
   .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
+    background-color: rgba(61, 174, 43, 0.9);
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
+}
+
+.item-concept {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.item-description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 footer.footer {
@@ -303,33 +340,33 @@ footer.footer .social-link {
   width: 4rem;
   line-height: 4.3rem;
   font-size: 1.5rem;
-  background-color: #1D809F;
+  background-color: #3DAE2B;
   transition: background-color 0.15s ease-in-out;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 footer.footer .social-link:hover {
-  background-color: #155d74;
+  background-color: #2f8521;
   text-decoration: none;
 }
 
 a {
-  color: #1D809F;
+  color: #3DAE2B;
 }
 
 a:hover, a:focus, a:active {
-  color: #155d74;
+  color: #2f8521;
 }
 
 .btn-primary {
-  background-color: #1D809F !important;
-  border-color: #1D809F !important;
+  background-color: #3DAE2B !important;
+  border-color: #3DAE2B !important;
   color: #fff !important;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: #155d74 !important;
-  border-color: #155d74 !important;
+  background-color: #2f8521 !important;
+  border-color: #2f8521 !important;
 }
 
 .btn-secondary {
@@ -353,11 +390,11 @@ a:hover, a:focus, a:active {
 }
 
 .bg-primary {
-  background-color: #1D809F !important;
+  background-color: #F2F7FA !important;
 }
 
 .text-primary {
-  color: #1D809F !important;
+  color: #3DAE2B !important;
 }
 
 .text-secondary {

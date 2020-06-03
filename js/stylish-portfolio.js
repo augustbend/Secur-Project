@@ -1,6 +1,94 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  // Validate form
+  $("#frm_quote").validate({
+    rules: {
+      txt_email: {
+        required: true,
+        email: true
+      },
+      txt_telefono: {
+        required: true,
+        number: true,
+        minlength: 8,
+        maxlength: 9
+      },
+      txt_ruc: {
+        required: true,
+        number: true,
+        minlength: 8,
+        maxlength: 11
+      },
+      txt_planilla: {
+        required: true,
+        number: true
+      },
+      txt_honorarios: {
+        required: true,
+        number: true
+      }
+    },
+    messages: {
+      txt_email: {
+        required: "Ingrese su correo electrónico",
+        email: "Ingrese un correo electónico válido"
+      },
+      txt_telefono: {
+        required: "Ingrese su número de teléfono",
+        number: "Ingrese un número de teléfono válido",
+        minlength: "Su número debe tener mínimo 8 dígitos",
+        maxlength: "Su número debe tener máximo 9 dígitos"
+      },
+      txt_ruc: {
+        required: "Ingrese el RUC de su empresa",
+        number: "Ingrese un RUC válido",
+        minlength: "Su número debe tener mínimo 8 dígitos",
+        maxlength: "Su número debe tener máximo 11 dígitos"
+      },
+      txt_planilla: {
+        required: "Ingrese el número de trabajadores en planilla",
+        number: "Ingrese sólo número",
+      },
+      txt_honorarios: {
+        required: "Ingrese el número de trabajadores en recibo por honorarios",
+        number: "Ingrese sólo número",
+      },
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        url: "processo.php", 
+        type: "POST",             
+        data: new FormData($(form)),
+        cache: false,             
+        processData: false,      
+        success: function(data) {
+          console.log("done")
+            //$('#loading').hide();
+            //$("#message").html(data);
+        }
+    });
+    return false;
+    }
+
+  });
+
+  //Logic to send info
+  $("#btn_validar").on('click', function() {
+    var txt_planilla = $("#txt_planilla").val();
+    var txt_honorarios = $("#txt_honorarios").val();
+    var totalCount = (+txt_planilla) + (+txt_honorarios);
+
+    if (totalCount >= 20) {
+      console.log("mostrar plan 3");
+    }
+    if (totalCount >= 100) {
+      console.log("mostrar plan 1, 2");
+    }
+  });
+
+
+
   // Closes the sidebar menu
   $(".menu-toggle").click(function(e) {
     e.preventDefault();
