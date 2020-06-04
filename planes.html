@@ -37,88 +37,104 @@
     </div>
   </header>
 
-  <div class="container">
-  <h1 class="mb-1 title">Planes</h1>
-<!--     <table>
-      <thead>
-        <tr>
-          <td>Planes</td>
-          <td>Plan Regular 1</td>
-          <td>Planes</td>
-          <td>Planes</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-        </tr>
-      </tbody>
-    </table> -->
+  <div class="container d-flex" style="background-color: #fff;">
+    <h1 class="mb-1 title">Planes</h1>
+
     <style>
       .plan-container {
         margin: auto;
         width: 1060px;
+        background: #fff;
+        clear: both;
       }
       .plan {
-        border: solid 1px red;
+        border: solid 1px #e4e4e4;
         max-width: 300px;
         border-radius: 10px;
-        padding: 20px;
+        padding: 40px 20px;
         margin: 20px;
         float: left;
+        text-align: center;
       }
-      .plan .plan-title {
-
+      .plan-title {
+        color: #00609c;
+        font-size: 22px;
+        margin-bottom: 20px;
+        display: block;
+      }
+      .plan-key {
+        color: #00609c;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: .4px;
+      }
+      .plan-desc {
+        font-size: 18px;
+      }
+      .plan-features {
+        margin-bottom: 30px;
+      }
+      .plan-features li {
+        margin-bottom: 16px;
+      }
+      .plan-divider {
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 30px;
       }
     </style>
 <div class="plan-container">
     <div class="plan">
       <span class="plan-title">
-        Plan Regular 1
+        <strong>Plan Regular 1</strong>
       </span>
-      <ul>
-        <li>Cantidad de asegurados<br>100 asegurados mínimo</li>
-        <li>Tipo de asegurados<br>Solo personal</li>
-        <li>Coberturas</li>
-        <li>Indem. por diagnóstico<br>S/ 3,500.00</li>
-        <li>Renta hospitalaria<br>S/ 350.00 x día x 15 días (máx)</li>
-        <li>Indem. por fallecimiento<br>S/ 7,000.00</li>
-        <li>Vigencia<br>4 meses</li>
-        <li>Prima total x Vigencia x Aseg.<br>S/ 165.00</li>
-        <li>Prima mensual x Aseg. inc. IGV<br>S/ 41.25</li>
+      <ul class="list-unstyled plan-features">
+        <li><span class="plan-key">Cantidad de asegurados</span><br><span class="plan-desc">100 asegurados mínimo</span></li>
+        <li><span class="plan-key">Tipo de asegurados</span><br><span class="plan-desc">Solo personal</span></li>
+        <li><span class="plan-divider d-block">COBERTURAS</span></li>
+        <li><span class="plan-key">Indem. por diagnóstico</span><br><span class="plan-desc">S/ 3,500.00</span></li>
+        <li><span class="plan-key">Renta hospitalaria</span><br><span class="plan-desc">S/ 350.00 x día x 15 días (máx)</span></li>
+        <li><span class="plan-key">Indem. por fallecimiento</span><br><span class="plan-desc">S/ 7,000.00</span></li>
+        <li><span class="plan-key">Vigencia</span><br><span class="plan-desc">4 meses</span></li>
+        <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 165.00</span></li>
+        <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 41.25</span></li>
       </ul>
+      <button type="button" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
     <div class="plan">
       <span class="plan-title">
-        Plan Regular 1
+        <strong>Plan Regular 2</strong>
       </span>
-      <ul>
-        <li>Cantidad de asegurados<br>100 asegurados mínimo</li>
-        <li>Tipo de asegurados<br>Solo personal</li>
-        <li>Coberturas</li>
-        <li>Indem. por diagnóstico<br>S/ 3,500.00</li>
-        <li>Renta hospitalaria<br>S/ 350.00 x día x 15 días (máx)</li>
-        <li>Indem. por fallecimiento<br>S/ 7,000.00</li>
-        <li>Vigencia<br>4 meses</li>
-        <li>Prima total x Vigencia x Aseg.<br>S/ 165.00</li>
-        <li>Prima mensual x Aseg. inc. IGV<br>S/ 41.25</li>
+      <ul class="list-unstyled plan-features">
+        <li><span class="plan-key">Cantidad de asegurados</span><br><span class="plan-desc">100 asegurados mínimo</span></li>
+        <li><span class="plan-key">Tipo de asegurados</span><br><span class="plan-desc">Solo personal</span></li>
+        <li><span class="plan-divider d-block">COBERTURAS</span></li>
+        <li><span class="plan-key">Indem. por diagnóstico</span><br><span class="plan-desc">S/ 3,500.00</span></li>
+        <li><span class="plan-key">Renta hospitalaria</span><br><span class="plan-desc">S/ 350.00 x día x 15 días (máx)</span></li>
+        <li><span class="plan-key">Indem. por fallecimiento</span><br><span class="plan-desc">S/ 7,000.00</span></li>
+        <li><span class="plan-key">Vigencia</span><br><span class="plan-desc">6 meses</span></li>
+        <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 247.50</span></li>
+        <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 41.25</span></li>
       </ul>
+      <button type="button" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
     <div class="plan">
       <span class="plan-title">
-        Plan Regular 1
+        <strong>Plan Regular 3</strong>
       </span>
-      <ul>
-        <li>Cantidad de asegurados<br>100 asegurados mínimo</li>
-        <li>Tipo de asegurados<br>Solo personal</li>
-        <li>Coberturas</li>
-        <li>Indem. por diagnóstico<br>S/ 3,500.00</li>
-        <li>Renta hospitalaria<br>S/ 350.00 x día x 15 días (máx)</li>
-        <li>Indem. por fallecimiento<br>S/ 7,000.00</li>
-        <li>Vigencia<br>4 meses</li>
-        <li>Prima total x Vigencia x Aseg.<br>S/ 165.00</li>
-        <li>Prima mensual x Aseg. inc. IGV<br>S/ 41.25</li>
+      <ul class="list-unstyled plan-features">
+        <li><span class="plan-key">Cantidad de asegurados</span><br><span class="plan-desc">20 asegurados mínimo</span></li>
+        <li><span class="plan-key">Tipo de asegurados</span><br><span class="plan-desc">Personal + Familia (Dependientes)</span></li>
+        <li><span class="plan-divider d-block">COBERTURAS</span></li>
+        <li><span class="plan-key">Indem. por diagnóstico</span><br><span class="plan-desc">N.A.</span></li>
+        <li><span class="plan-key">Renta hospitalaria</span><br><span class="plan-desc">S/ 400.00 x día x 20 días (máx)</span></li>
+        <li><span class="plan-key">Indem. por fallecimiento</span><br><span class="plan-desc">S/ 10,000.00</span></li>
+        <li><span class="plan-key">Vigencia</span><br><span class="plan-desc">4 meses</span></li>
+        <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 80.00</span></li>
+        <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 20.00</span></li>
       </ul>
+      <button type="button" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
   </div>
 
@@ -126,17 +142,20 @@
 
 </div>
 <!-- Modal 2 -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div class="modal-body">
-        <h2 class="mb-4 text-center">¡Ya casi...!</h2>
+        <h2 class="mb-4 text-center title">¡Ya casi...!</h2>
         <div class="text-center">
           <p>Por favor, descarga la plantilla, llena los datos de tus colaboradores, y vuélvelo a cargar.</p>
           <form>
             <div class="form-group row">
               <div class="col-sm-6">
-                <button type="button" class="btn btn-primary">Descargar plantilla</button>
+                <a class="btn btn-primary" href="https://securcovid.s3.amazonaws.com/plantilla_secur_covid.XLSX">Descargar plantilla</a>
               </div>
               <div class="col-sm-6">
                 <div class="input-group mb-3">
@@ -150,7 +169,6 @@
                 </div>
               </div>
             </div>
-            
           </form>
         </div>
       </div>
