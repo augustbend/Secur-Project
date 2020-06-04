@@ -1,17 +1,114 @@
 (function($) {
   "use strict"; // Start of use strict
-
-  var userIP = null;    // Variable to get user ip
-
+  var queryString = new Array();
   function getUserIP() {
     return $.getJSON('https://api.ipify.org?format=json').then(function(data){
       return data.ip;
     });
   }
   
-  var userIP = getUserIP().then(function(returndata){
-    userIP = returndata;
+
+  if (queryString.length == 0) {
+    if (window.location.search.split('?').length > 1) {
+        var params = window.location.search.split('?')[1].split('&');
+        for (var i = 0; i < params.length; i++) {
+            var key = params[i].split('=')[0];
+            var value = decodeURIComponent(params[i].split('=')[1]);
+            queryString[key] = value;
+        }
+    }
+}
+if (queryString["id"] != null) {
+    $("#trleIident").val(queryString["id"]);
+}
+
+
+  //utility function
+function getFormData(data) {
+  var unindexed_array = data;
+  var indexed_array = {};
+
+  $.map(unindexed_array, function(n, i) {
+   indexed_array[n['name']] = n['value'];
   });
+
+  return indexed_array;
+}
+
+  getUserIP().then(function(returndata){
+    var userIP = returndata;
+    $("#auditVipad").val(userIP);
+  });
+
+  // Show names in file input
+  $('input[type="file"]').on("change", function() {
+    let filenames = [];
+    let files = document.getElementById("trleVfileBa64").files;
+    if (files.length > 1) {
+      filenames.push("Total Files (" + files.length + ")");
+    } else {
+      for (let i in files) {
+        if (files.hasOwnProperty(i)) {
+          filenames.push(files[i].name);
+        }
+      }
+    }
+    $(this)
+      .next(".custom-file-label")
+      .html(filenames.join(","));
+  });
+
+
+
+
+
+
+// Upload excel form
+$("#frm_uploadExcel").validate({
+  rules: {
+    trleVfileBa64: {
+      required: true
+    }
+  },
+  messages: {
+    trleVfileBa64: {
+      required: "Elija la plantilla"
+    }
+  },
+  errorElement: 'span',
+  errorPlacement: function (error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+  },
+  highlight: function (element, errorClass, validClass) {
+      $(element).addClass('is-invalid');
+  },
+  unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('is-invalid');
+  },
+  submitHandler: function(form) {
+    //e.preventDefault();
+    var formData = new FormData(document.getElementById("frm_uploadExcel"));
+    $.ajax({
+        url: "http://qa-ec2-1315226441.us-east-1.elb.amazonaws.com:8096/api/v1/plan/loadPlantilla",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+          console.log("done");
+          window.location.href = "http://localhost:3000/planes.html";
+        },
+    }).done(function(res){
+            console.log(res);
+    });
+  }
+
+});
+
+
 
   // Validate form
   $("#frm_quote").validate({
@@ -79,22 +176,20 @@
         $(element).removeClass('is-invalid');
     },
     submitHandler: function(form) {
-      console.log(userIP);
-      var txt_planilla = $("#trleNumtr").val();
-      var txt_honorarios = $("#trleNumHonor").val();
+      var txt_planilla = $("#trleNumtrPlani").val();
+      var txt_honorarios = $("#trleNumtr").val();
       var totalCount = (+txt_planilla) + (+txt_honorarios);
+      var data = $(form).serializeArray();
 
       $.ajax({
         url: "http://qa-ec2-1315226441.us-east-1.elb.amazonaws.com:8096/api/v1/plan/tTransactionLeads", 
         type: "POST",             
-        data: $(form).serialize(),
+        data: JSON.stringify(getFormData(data)),
+        dataType: "json",
+        contentType : "application/json",
         success: function(data) {
-          console.log("done")
-        },
-        error: function (xhr, ajaxOptions, thrownError) {
-          //alert(xhr.status);
-          //alert(xhr.responseText);
-          //alert(thrownError);
+          console.log("done");
+          window.location.href = "http://localhost:3000/planes.html?idTrans="+data.payload.id_transaccion;
         },
     });
     return false;

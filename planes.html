@@ -38,7 +38,7 @@
   </header>
 
   <div class="container d-flex" style="background-color: #fff;">
-    <h1 class="mb-1 title">Planes</h1>
+    <h1 class="mb-1 title d-block">Planes</h1>
 
     <style>
       .plan-container {
@@ -100,7 +100,7 @@
         <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 165.00</span></li>
         <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 41.25</span></li>
       </ul>
-      <button type="button" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
+      <button type="button" data-plan="1" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
     <div class="plan">
       <span class="plan-title">
@@ -117,7 +117,7 @@
         <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 247.50</span></li>
         <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 41.25</span></li>
       </ul>
-      <button type="button" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
+      <button type="button" data-plan="2" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
     <div class="plan">
       <span class="plan-title">
@@ -134,7 +134,7 @@
         <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 80.00</span></li>
         <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 20.00</span></li>
       </ul>
-      <button type="button" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
+      <button type="button" data-plan="3" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
   </div>
 
@@ -152,22 +152,30 @@
         <h2 class="mb-4 text-center title">¡Ya casi...!</h2>
         <div class="text-center">
           <p>Por favor, descarga la plantilla, llena los datos de tus colaboradores, y vuélvelo a cargar.</p>
-          <form>
+          <BR>
+          <div class="form-group row ">
+            <div class="d-flex mx-auto">
+              <a class="btn btn-dark" href="https://securcovid.s3.amazonaws.com/plantilla_secur_covid.XLSX">Descargar plantilla</a>
+            </div>
+          </div>
+          <BR>
+          <form method="post" enctype="multipart/form-data" id="frm_uploadExcel" action="">
+            <input type="hidden" id="trleVplanSele" name="trleVplanSele" />
+            <input type="hidden" id="trleIident" name="trleIident"/>
             <div class="form-group row">
-              <div class="col-sm-6">
-                <a class="btn btn-primary" href="https://securcovid.s3.amazonaws.com/plantilla_secur_covid.XLSX">Descargar plantilla</a>
-              </div>
-              <div class="col-sm-6">
+              <div class="col-sm-10 d-flex mx-auto">
                 <div class="input-group mb-3">
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile02">
-                    <label class="custom-file-label" for="inputGroupFile02">Elegir archivo</label>
+                  <div class="custom-file text-left">
+                    <input type="file" name="trleVfileBa64" class="custom-file-input" id="trleVfileBa64" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                    <label class="custom-file-label" for="customFile">Plantilla</label>
                   </div>
                   <div class="input-group-append">
-                    <span class="input-group-text" id="">Subir plantilla</span>
+                    <button type="submit" name="btn_upload" value="Cargar plantilla" id="btn_upload" class="btn btn-primary">Cargar</button>
                   </div>
-                </div>
-              </div>
+            </div>
+           
+            </div>
+
             </div>
           </form>
         </div>
