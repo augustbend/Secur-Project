@@ -12,6 +12,11 @@ html {
 
 body {
   font-family: 'Lato';
+  background: #F2F7FA;
+}
+
+.title {
+  color: #00609C;
 }
 
 .btn-xl {
@@ -98,8 +103,20 @@ h6 {
   padding: 2rem 2.5rem;
 }
 
+.invalid-feedback {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+button.close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+}
+
 .masthead {
-  color: #fff;
   min-height: 30rem;
   position: relative;
   display: table;
@@ -108,9 +125,9 @@ h6 {
   padding-top: 8rem;
   padding-bottom: 8rem;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 }
 
 .masthead h1 {
@@ -119,8 +136,9 @@ h6 {
   padding: 0;
 }
 
-.masthead .headline {
+.masthead .tagline {
   font-size: 26px;
+  color: #00609C;
 }
 
 @media (min-width: 992px) {
@@ -130,6 +148,15 @@ h6 {
   .masthead h1 {
     font-size: 2.6rem;
   }
+}
+
+.masthead-container {
+  background: #fff;
+  margin: auto;
+  margin-top: 350px;
+  width: 1140px;
+  padding: 80px;
+  border-radius: 20px;
 }
 
 /* Side Menu */

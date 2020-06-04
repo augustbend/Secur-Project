@@ -39,31 +39,19 @@
 
   <!-- Header -->
   <header class="masthead d-flex">
-    <div class="container">
-      <h1 class="mb-1">Seguro Indemnizatorio COVID-19</h1>
-      <p class="mb-5 headline">
+    <div class="masthead-container">
+      <h1 class="mb-1 title">Seguro Indemnizatorio COVID-19</h1>
+      <p class="mb-5 tagline title">
         Protege a tus héroes que día a día dedican su mayor esfuerzo y empeño en el trabajo.
       </p>
       <hr style="width:200px; display:block; height:4px; background: #fff;" class="align-self-start "></hr>
       <p>Nuestro seguro cuenta con</p>
       <ul class="list-unstyled">
-        <li>Cobertura de hospitalización </li>
-        <li>Indemnización por contagio y fallecimiento</li>
+        <li><img src="" />Cobertura de hospitalización </li>
+        <li><img src="" />Indemnización por contagio y fallecimiento</li>
       </ul>
       <button type="button" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#exampleModal1">COTIZAR</button>
-    </div>
-    <div class="overlay"></div>
-  </header>
-
-  <!-- Services -->
-  <section class="content-section bg-primary text-white " id="services">
-    <div class="container">
-      <div class="content-section-heading text-center">
-        <h3 class="text-secondary mb-0">Services</h3>
-        <h2 class="mb-5">What We Offer</h2>
-      </div>
-      
-      
+      <br><br>
       <div class="row">
         <div class="col-12">
           <p class="item-concept">¿Qué es el Seguro Indemnizatorio COVID 19?</p>
@@ -92,43 +80,50 @@
         </div>
       </div>
     </div>
-  </section>
+    
+  </header>
+
 
 <!-- Modal 1 -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       <div class="modal-body">
-        <h2 class="mb-4 text-center">¡Quiero cotizar!</h2>
+        <h2 class="mb-4 text-center title">¡Quiero cotizar!</h2>
         <div>
           <form id="frm_quote" method="post" action="">
             <div class="form-group row">
               <div class="col-sm-12">
-                <input type="email" class="form-control form-control-lg" id="txt_email" name="txt_email" placeholder="Correo de contacto">
+                <input type="email" class="form-control form-control-lg" id="trleVemail" name="trleVemail" placeholder="Correo de contacto">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
-                <input type="text" class="form-control form-control-lg" id="txt_telefono" name="txt_telefono" placeholder="Teléfono de contacto">
+                <input type="text" class="form-control form-control-lg" id="trleVphone" name="trleVphone" placeholder="Teléfono de contacto">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
-                <input type="text" class="form-control form-control-lg" id="txt_ruc" name="txt_ruc" placeholder="RUC">
+                <input type="text" class="form-control form-control-lg" id="trleRuc" name="trleRuc" placeholder="RUC">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
-                <input type="text" class="form-control form-control-lg" id="txt_planilla" name="txt_planilla" placeholder="N° de trabajadores en planilla">
+                <input type="text" class="form-control form-control-lg" id="trleNumtr" name="trleNumtr" placeholder="N° de trabajadores en planilla">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
-                <input type="text" class="form-control form-control-lg" id="txt_honorarios" name="txt_honorarios" placeholder="N° de trabajadores en recibo por honorarios">
+                <input type="text" class="form-control form-control-lg" id="trleNumHonor" name="trleNumHonor" placeholder="N° de trabajadores en recibo por honorarios">
               </div>
             </div>
             <div class="form-group row">
-              <button type="submit" id="btn_validar" class="btn btn-primary btn-xl">COTIZAR</button>
+              <div class="col-sm-12">
+              <button type="submit" id="btn_validar" class="btn btn-primary btn-xl d-flex mx-auto">COTIZAR</button>
+              </div>
             </div>
           </form>
         </div>

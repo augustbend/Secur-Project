@@ -6,6 +6,10 @@ html {
 
 body {
   @include body-font;
+  background: #F2F7FA;
+}
+.title {
+  color: #00609C;
 }
 
 // Custom Button Size
@@ -104,7 +108,16 @@ h6 {
 .modal-body {
   padding: 2rem 2.5rem;
 }
-
-
+.invalid-feedback {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+button.close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+}
 
 

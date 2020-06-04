@@ -1,93 +1,106 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  var userIP = null;    // Variable to get user ip
+
+  function getUserIP() {
+    return $.getJSON('https://api.ipify.org?format=json').then(function(data){
+      return data.ip;
+    });
+  }
+  
+  var userIP = getUserIP().then(function(returndata){
+    userIP = returndata;
+  });
+
   // Validate form
   $("#frm_quote").validate({
     rules: {
-      txt_email: {
+      trleVemail: {
         required: true,
         email: true
       },
-      txt_telefono: {
+      trleVphone: {
         required: true,
         number: true,
         minlength: 8,
         maxlength: 9
       },
-      txt_ruc: {
+      trleRuc: {
         required: true,
         number: true,
         minlength: 8,
         maxlength: 11
       },
-      txt_planilla: {
+      trleNumtr: {
         required: true,
         number: true
       },
-      txt_honorarios: {
+      trleNumHonor: {
         required: true,
         number: true
       }
     },
     messages: {
-      txt_email: {
+      trleVemail: {
         required: "Ingrese su correo electrónico",
         email: "Ingrese un correo electónico válido"
       },
-      txt_telefono: {
+      trleVphone: {
         required: "Ingrese su número de teléfono",
         number: "Ingrese un número de teléfono válido",
         minlength: "Su número debe tener mínimo 8 dígitos",
         maxlength: "Su número debe tener máximo 9 dígitos"
       },
-      txt_ruc: {
+      trleRuc: {
         required: "Ingrese el RUC de su empresa",
         number: "Ingrese un RUC válido",
         minlength: "Su número debe tener mínimo 8 dígitos",
         maxlength: "Su número debe tener máximo 11 dígitos"
       },
-      txt_planilla: {
+      trleNumtr: {
         required: "Ingrese el número de trabajadores en planilla",
         number: "Ingrese sólo número",
       },
-      txt_honorarios: {
+      trleNumHonor: {
         required: "Ingrese el número de trabajadores en recibo por honorarios",
         number: "Ingrese sólo número",
       },
     },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+    },
     submitHandler: function(form) {
+      console.log(userIP);
+      var txt_planilla = $("#trleNumtr").val();
+      var txt_honorarios = $("#trleNumHonor").val();
+      var totalCount = (+txt_planilla) + (+txt_honorarios);
+
       $.ajax({
-        url: "processo.php", 
+        url: "http://qa-ec2-1315226441.us-east-1.elb.amazonaws.com:8096/api/v1/plan/tTransactionLeads", 
         type: "POST",             
-        data: new FormData($(form)),
-        cache: false,             
-        processData: false,      
+        data: $(form).serialize(),
         success: function(data) {
           console.log("done")
-            //$('#loading').hide();
-            //$("#message").html(data);
-        }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+          //alert(xhr.status);
+          //alert(xhr.responseText);
+          //alert(thrownError);
+        },
     });
     return false;
     }
 
   });
-
-  //Logic to send info
-  $("#btn_validar").on('click', function() {
-    var txt_planilla = $("#txt_planilla").val();
-    var txt_honorarios = $("#txt_honorarios").val();
-    var totalCount = (+txt_planilla) + (+txt_honorarios);
-
-    if (totalCount >= 20) {
-      console.log("mostrar plan 3");
-    }
-    if (totalCount >= 100) {
-      console.log("mostrar plan 1, 2");
-    }
-  });
-
-
 
   // Closes the sidebar menu
   $(".menu-toggle").click(function(e) {
