@@ -15,7 +15,7 @@
 
   <!-- Custom Fonts -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
   <!-- Custom CSS -->
@@ -38,61 +38,64 @@
   </header>
 
   <!-- Header -->
-  <header class="masthead d-flex">
+  <main class="masthead d-flex mb-5">
     <div class="masthead-container">
       <h1 class="mb-1 title">Seguro Indemnizatorio COVID-19</h1>
-      <p class="mb-5 tagline title">
-        Protege a tus héroes que día a día dedican su mayor esfuerzo y empeño en el trabajo.
+      <p class="mb-3 tagline title">
+        Protege a tus héroes que día a día dedican su mayor esfuerzo y empeño en el trabajo
       </p>
-      <hr style="width:200px; display:block; height:4px; background: #fff;" class="align-self-start "></hr>
-      <p>Nuestro seguro cuenta con</p>
+      <hr class="divider"></hr>
+      <p style="font-size:16px">NUESTRO SEGURO CUENTA CON</p>
       <ul class="list-unstyled">
-        <li><img src="" />Cobertura de hospitalización </li>
-        <li><img src="" />Indemnización por contagio y fallecimiento</li>
+        <li><img src="img/icon-check.svg" width="22" /> Cobertura de hospitalización </li>
+        <li><img src="img/icon-check.svg" width="22" /> Indemnización por contagio y fallecimiento</li>
       </ul>
-      <button type="button" class="btn btn-primary btn-xl js-scroll-trigger" data-toggle="modal" data-target="#exampleModal1">COTIZAR</button>
-      <br><br>
-      <div class="row">
-        <div class="col-12">
-          <p class="item-concept">¿Qué es el Seguro Indemnizatorio COVID 19?</p>
+      <button type="button" class="btn btn-primary btn-xl js-scroll-trigger mb-5 mt-3" data-toggle="modal" data-target="#mdl_quote">COTIZAR</button>
+      <div class="row mt-3">
+        <div class="col-12 mb-4">
+          <img class="item-image" src="img/icon-heart.svg" width="48" />
+          <p class="item-concept title mb-2">¿Qué es el Seguro Indemnizatorio COVID 19?</p>
           <p class="item-description">Seguro COLECTIVO contratado por una empresas a favor de sus trabajadores frente al riesgo de contraer COVID-19. De igual forma, hay planes que brindan cobertura a los dependientes de los trabajadores</p>
         </div>
-        <div class="col-12">
-          <p class="item-concept">¿Cuál es el alcances del Seguro Indemonizatorio COVID 19?</p>
+        <div class="col-12 mb-4">
+          <img class="item-image" src="img/icon-shield.svg" width="48" />
+          <p class="item-concept title mb-2">¿Cuál es el alcances del Seguro Indemonizatorio COVID 19?</p>
           <p class="item-description">Este seguro ofrece protección en las siguientes coberturas:</p>
-            <ul>
-              <li>Indemnización por confirmación de contagio</li>
-              <li>Renta hospitalaria</li>
-              <li>Indemnización por fallecimeinto</li>
+            <ul class="ml-5 item-list">
+              <li class="ml-3">Indemnización por confirmación de contagio</li>
+              <li class="ml-3">Renta hospitalaria</li>
+              <li class="ml-3">Indemnización por fallecimeinto</li>
             </ul>
         </div>
-        <div class="col-12">
-          <p class="item-concept">¿Quiénes son los beneficiarios?</p>
+        <div class="col-12 mb-4">
+          <img class="item-image" src="img/icon-person.svg" width="48" />
+          <p class="item-concept title mb-2">¿Quiénes son los beneficiarios?</p>
           <p class="item-description">Serán los Herederos Legales del Asegurado o los designados por el mismo y que figuren en el Certificado de Seguro Individual.</p>
         </div>
-        <div class="col-12">
-          <p class="item-concept">¿Qué sectores económicos deben contar con este seguro de forma obligatorio?</p>
+        <div class="col-12 mb-4">
+          <img class="item-image" src="img/icon-business.svg" width="48" />
+          <p class="item-concept title mb-2">¿Qué sectores económicos deben contar con este seguro de forma obligatorio?</p>
           <p class="item-description">Bajo  Resolución Ministerial N° 163-2020-PRODUCE, se obliga a las empresas que brinden servicio de restaurantes con delivery o “take off” y además a la entrega de bienes bajo comercio electrónico</p>
         </div>
-        <div class="col-12">
-          <p class="item-concept">¿Cómo se activa la cobertura?</p>
+        <div class="col-12 mb-4">
+          <img class="item-image" src="img/icon-document.svg" width="48" />
+          <p class="item-concept title mb-2">¿Cómo se activa la cobertura?</p>
           <p class="item-description">Los asegurados deben presentar el resultado positivo bajo prueba molecular aprobada por MINSA</p>
         </div>
       </div>
     </div>
-    
-  </header>
+  </main>
 
 
 <!-- Modal 1 -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="mdl_quote" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       <div class="modal-body">
-        <h2 class="mb-4 text-center title">¡Quiero cotizar!</h2>
+        <h2 class="mb-4 pb-2 text-center title">¡Quiero cotizar!</h2>
         <div>
           <form id="frm_quote" method="post" action="">
             <input type="hidden" id="auditVipad" name="auditVipad">
@@ -113,6 +116,11 @@
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
+                <input type="text" class="form-control form-control-lg" id="trleVnameComer" name="trleVnameComer" placeholder="Razón social">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
                 <input type="text" class="form-control form-control-lg" id="trleNumtrPlani" name="trleNumtrPlani" placeholder="N° de trabajadores en planilla">
               </div>
             </div>
@@ -123,7 +131,7 @@
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
-              <button type="submit" id="btn_validar" class="btn btn-primary btn-xl d-flex mx-auto">COTIZAR</button>
+              <button type="submit" id="btn_validar" class="btn btn-primary btn-lg d-flex mx-auto mt-3">COTIZAR</button>
               </div>
             </div>
           </form>
@@ -132,24 +140,6 @@
     </div>
   </div>
 </div>
-
-<!-- Modal 3 -->
-<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h2 class="mb-4 text-center">¡Listo!</h2>
-        <div class="text-center">
-          <p>Nos contactaremos contigo una vez realizada la emisión para informarte de los siguientes pasos</p>
-          <p>¡Gracias por tu preferencia!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
 
   <!-- Bootstrap core JavaScript -->

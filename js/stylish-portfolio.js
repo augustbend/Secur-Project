@@ -131,15 +131,18 @@ $("#frm_uploadExcel").validate({
     
      getBase64(document.querySelector('input[type="file"]').files[0]).then(function(data) {
       $("#trleVfileBa64").val(data);
-      var data = $(form).serializeArray();
-      var dataFormatted = JSON.stringify(getFormData(data));
-      
+      var formData = $(form).serializeArray();
+
       $.ajax({
-        url: "http://qa-ec2-1315226441.us-east-1.elb.amazonaws.com:8096/api/v1/plan/loadPlantilla",
+        url: "https://uatgateway.zumseguros.com/input/api/v1/plan/loadPlantilla",
         type: "post",
-        data: dataFormatted,
+        data: JSON.stringify(getFormData(formData)),
+        headers: {
+          'codCanal':'200',
+        },
+        dataType: "json",
         cache: false,
-        contentType: false,
+        contentType : "application/json",
         processData: false,
         success: function(data) {
           console.log("done");
@@ -207,6 +210,9 @@ $("#frm_uploadExcel").validate({
         minlength: 8,
         maxlength: 11
       },
+      trleVnameComer: {
+        required: true,
+      },
       trleNumtr: {
         required: true,
         number: true
@@ -232,6 +238,9 @@ $("#frm_uploadExcel").validate({
         number: "Ingrese un RUC válido",
         minlength: "Su número debe tener mínimo 8 dígitos",
         maxlength: "Su número debe tener máximo 11 dígitos"
+      },
+      trleVnameComer: {
+        required: "Ingrese la razón social de su empresa",
       },
       trleNumtr: {
         required: "Ingrese el número de trabajadores en planilla",
@@ -260,9 +269,12 @@ $("#frm_uploadExcel").validate({
       var data = $(form).serializeArray();
 
       $.ajax({
-        url: "http://qa-ec2-1315226441.us-east-1.elb.amazonaws.com:8096/api/v1/plan/tTransactionLeads", 
+        url: "https://uatgateway.zumseguros.com/input/api/v1/plan/tTransactionLeads",
         type: "POST",             
         data: JSON.stringify(getFormData(data)),
+        headers: {
+          'codCanal':'200',
+        },
         dataType: "json",
         contentType : "application/json",
         success: function(data) {

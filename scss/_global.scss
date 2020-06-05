@@ -7,11 +7,17 @@ html {
 body {
   @include body-font;
   background: #F2F7FA;
+  color: #00111C;
+  font-weight: 400;
 }
 .title {
   color: #00609C;
 }
 
+.btn {
+  font-weight: 400 !important;
+  box-shadow: none !important;
+}
 // Custom Button Size
 .btn-xl {
   padding-left: 2.5rem;
@@ -19,8 +25,6 @@ body {
   border-radius: 50px;
   font-size: 22px;
   line-height: 2;
-  font-weight: 300 !important;
-  box-shadow: none !important;
 }
 
 // Content Section
@@ -123,5 +127,12 @@ button.close {
 .custom-file-input:lang(en)~.custom-file-label::after {
   content: "Elegir";
 }
-
-
+header {
+  background-color: #fff;
+}
+.divider {
+  width:200px; 
+  display: inline-block; 
+  height:4px;
+  background-color: #3dae2b;
+}

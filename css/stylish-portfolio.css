@@ -13,10 +13,17 @@ html {
 body {
   font-family: 'Lato';
   background: #F2F7FA;
+  color: #00111C;
+  font-weight: 400;
 }
 
 .title {
   color: #00609C;
+}
+
+.btn {
+  font-weight: 400 !important;
+  box-shadow: none !important;
 }
 
 .btn-xl {
@@ -25,8 +32,6 @@ body {
   border-radius: 50px;
   font-size: 22px;
   line-height: 2;
-  font-weight: 300 !important;
-  box-shadow: none !important;
 }
 
 .content-section {
@@ -120,18 +125,30 @@ button.close {
   content: "Elegir";
 }
 
+header {
+  background-color: #fff;
+}
+
+.divider {
+  width: 200px;
+  display: inline-block;
+  height: 4px;
+  background-color: #3dae2b;
+}
+
 .masthead {
+  font-size: 22px;
   min-height: 30rem;
   position: relative;
   display: table;
   width: 100%;
   height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background: url("../img/bg-masthead.jpg");
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 .masthead h1 {
@@ -157,10 +174,17 @@ button.close {
 .masthead-container {
   background: #fff;
   margin: auto;
-  margin-top: 350px;
-  width: 1140px;
-  padding: 80px;
-  border-radius: 20px;
+  margin-top: 150px;
+  padding: 40px 40px;
+  border-radius: 20px 20px 0 0;
+}
+
+@media (min-width: 992px) {
+  .masthead-container {
+    margin-top: 350px;
+    width: 1140px;
+    padding: 60px 80px;
+  }
 }
 
 /* Side Menu */
@@ -348,16 +372,24 @@ button.close {
   }
 }
 
+.item-image {
+  position: absolute;
+}
+
 .item-concept {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: .5rem;
+  margin-left: 80px;
 }
 
 .item-description {
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-left: 80px;
+}
+
+.item-list {
+  font-size: 18px;
 }
 
 footer.footer {
