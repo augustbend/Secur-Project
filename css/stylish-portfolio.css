@@ -122,7 +122,7 @@ button.close {
 }
 
 .custom-file-input:lang(en) ~ .custom-file-label::after {
-  content: "Elegir";
+  content: "Seleccionar plantilla";
 }
 
 header {
@@ -136,10 +136,15 @@ header {
   background-color: #3dae2b;
 }
 
+.navbar {
+  z-index: 1;
+}
+
 .masthead {
   font-size: 22px;
   min-height: 30rem;
   position: relative;
+  z-index: -1;
   display: table;
   width: 100%;
   height: auto;
@@ -157,11 +162,6 @@ header {
   padding: 0;
 }
 
-.masthead .tagline {
-  font-size: 26px;
-  color: #00609C;
-}
-
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
@@ -176,24 +176,27 @@ header {
   margin: auto;
   margin-top: 60px;
   padding: 40px 40px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
 }
 
 @media (min-width: 992px) {
   .main-container {
-    width: 1140px;
-    padding: 60px 80px;
+    padding: 40px 60px;
   }
 }
 
 .main-container.hero {
-  margin-top: 100px;
+  margin-top: 0;
+  border-radius: 0;
 }
 
-@media (min-width: 992px) {
-  .main-container.hero {
-    margin-top: 300px;
-  }
+.lead-block {
+  background-color: #00609c;
+  color: #fff;
+}
+
+.tagline {
+  font-size: 22px;
 }
 
 /* Side Menu */

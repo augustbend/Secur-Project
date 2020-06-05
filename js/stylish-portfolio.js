@@ -91,6 +91,9 @@
   // Validate form
   $("#frm_quote").validate({
     rules: {
+      tlreVnameContact: {
+        required: true
+      },
       trleVemail: {
         required: true,
         email: true,
@@ -120,6 +123,9 @@
       },
     },
     messages: {
+      tlreVnameContact: {
+        required: "Ingrese su nombre",
+      },
       trleVemail: {
         required: "Ingrese su correo electrónico",
         email: "Ingrese un correo electónico válido",

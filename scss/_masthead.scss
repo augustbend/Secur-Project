@@ -2,6 +2,7 @@
   font-size: 22px;
   min-height: 30rem;
   position: relative;
+  z-index: -1;
   display: table;
   width: 100%;
   height: auto;
@@ -16,10 +17,7 @@
     margin: 0;
     padding: 0;
   }
-  .tagline {
-    font-size: 26px;
-    color: #00609C
-  }
+
   @media (min-width: 992px) {
     height: 100vh;
     h1 {
@@ -27,27 +25,29 @@
     }
   }
 }
-
-
-
-
 .main-container {
   background: #fff;
   margin: auto;
   margin-top: 60px;
   padding: 40px 40px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
 
 
     @media (min-width: 992px) {
-      width: 1140px;
-      padding: 60px 80px;
+      padding: 40px 60px;
     }
 }
-
 .main-container.hero {
-  margin-top: 100px;
-    @media (min-width: 992px) {
-      margin-top: 300px;
-    }
+  margin-top:0;
+  border-radius: 0;
 }
+.lead-block {
+  background-color: #00609c;
+  color: #fff;
+}
+.tagline {
+  font-size: 22px;
+}
+
+
+

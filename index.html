@@ -40,26 +40,27 @@
   </header>
 
   <!-- Header -->
-  <main class="masthead d-flex mb-5">
-    <div class="main-container container hero">
-      <h1 class="mb-1 title">Seguro Indemnizatorio COVID-19</h1>
-      <p class="mb-3 tagline title">
+  <main class="container-fluid mb-5">
+
+
+    <div class="row">
+      <div class="col-md-6">
+    <div class="masthead"></div>
+    <div class="lead-block pt-4 pb-3 pr-4 pl-4">      
+      <h2 class="mb-1">Seguro Indemnizatorio COVID-19</h2>
+      <p class="mb-3 tagline">
         Protege a tus héroes que día a día dedican su mayor esfuerzo y empeño en el trabajo
-      </p>
-      <hr class="divider"></hr>
-      <p style="font-size:16px">NUESTRO SEGURO CUENTA CON</p>
-      <ul class="list-unstyled">
-        <li><img src="img/icon-check.svg" width="22" /> Cobertura de hospitalización </li>
-        <li><img src="img/icon-check.svg" width="22" /> Indemnización por contagio y fallecimiento</li>
-      </ul>
-      <button type="button" class="btn btn-primary btn-xl js-scroll-trigger mb-5 mt-3" data-toggle="modal" data-target="#mdl_quote">COTIZAR</button>
-      <div class="row mt-3">
-        <div class="col-12 mb-4">
-          <img class="item-image" src="img/icon-heart.svg" width="48" />
-          <p class="item-concept title mb-2">¿Qué es el Seguro Indemnizatorio COVID-19?</p>
-          <p class="item-description">Seguro COLECTIVO contratado por una empresa a favor de sus trabajadores frente al riesgo de contraer COVID-19. De igual forma, hay planes que brindan cobertura a los dependientes de los trabajadores.</p>
+      </p></div>
+
+  </div>
+  <div class="col-md-6" style="background-color: #fff;">
+    <div class="main-container hero">
+      <div class="row">
+        <div class="col-12 mb-4 lead-block pt-4 pb-3 pr-4 pl-4">
+          <p class="mb-2" style="font-size:20px"><strong>¿Qué es el Seguro Indemnizatorio COVID-19?</strong></p>
+          <p>Seguro COLECTIVO contratado por una empresa a favor de sus trabajadores frente al riesgo de contraer COVID-19, previa validación de resultado positivo con prueba molecular del MINSA.</p>
         </div>
-        <div class="col-12 mb-4">
+        <div class="col-12 mb-3 mt-3">
           <img class="item-image" src="img/icon-shield.svg" width="48" />
           <p class="item-concept title mb-2">¿Cuál es el alcance del Seguro Indemnizatorio COVID-19?</p>
           <p class="item-description">Este seguro ofrece protección en las siguientes coberturas:</p>
@@ -69,26 +70,36 @@
               <li class="ml-3">Indemnización por fallecimiento</li>
             </ul>
         </div>
-        <div class="col-12 mb-4">
+        <div class="col-12 mb-3">
           <img class="item-image" src="img/icon-person.svg" width="48" />
           <p class="item-concept title mb-2">¿Quiénes son los beneficiarios?</p>
           <p class="item-description">Serán los Herederos Legales del Asegurado o los designados por el mismo y que figuren en el Certificado de Seguro Individual.</p>
         </div>
-        <div class="col-12 mb-4">
+        <div class="col-12 mb-3">
           <img class="item-image" src="img/icon-business.svg" width="48" />
           <p class="item-concept title mb-2">¿Qué sectores económicos deben contar con este seguro de forma obligatorio?</p>
           <p class="item-description">Bajo  Resolución Ministerial N° 163-2020-PRODUCE, se obliga a las empresas que brinden servicio de restaurantes con delivery o “take off” y además a la entrega de bienes bajo comercio electrónico.</p>
         </div>
-        <div class="col-12 mb-4">
-          <img class="item-image" src="img/icon-document.svg" width="48" />
-          <p class="item-concept title mb-2">¿Cómo se activa la cobertura?</p>
-          <p class="item-description">Los asegurados deben presentar el resultado positivo bajo prueba molecular aprobada por MINSA.</p>
+        <div class="col-12 mb-3 text-center">
+          <button type="button" class="btn btn-primary btn-xl btn-block js-scroll-trigger mt-3" data-toggle="modal" data-target="#mdl_quote">COTIZAR</button>
         </div>
       </div>
+
+
+
+
+    </div>
+</div>
     </div>
 
-  
+
+
   </main>
+  <footer class="text-center">
+    <a href="https://www.hellozum.com/" target="_blank"><img class="mb-5" src="img/logo-hellozum.svg" width="250" /></a>
+  </footer>
+
+
 
   <!-- Modal 1 -->
   <div class="modal fade" id="mdl_quote" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -104,12 +115,17 @@
               <input type="hidden" id="auditVipad" name="auditVipad">
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <input type="email" class="form-control form-control-lg" id="trleVemail" name="trleVemail" placeholder="Correo de contacto">
+                  <input type="text" class="form-control form-control-lg" id="tlreVnameContact" name="tlreVnameContact" placeholder="Nombre de contacto">
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <input type="text" class="form-control form-control-lg" id="trleVphone" name="trleVphone" placeholder="Teléfono de contacto">
+                  <input type="email" class="form-control form-control-lg" id="trleVemail" name="trleVemail" placeholder="Correo">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control form-control-lg" id="trleVphone" name="trleVphone" placeholder="Teléfono">
                 </div>
               </div>
               <div class="form-group row">
@@ -129,7 +145,7 @@
               </div>
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <input type="text" class="form-control form-control-lg" id="trleNumtr" name="trleNumtr" placeholder="N° de trabajadores en recibo por honorarios">
+                  <input type="text" class="form-control form-control-lg" id="trleNumtr" name="trleNumtr" placeholder="N° de trabajadores con recibo por honorarios">
                 </div>
               </div>
               <div class="form-group row">

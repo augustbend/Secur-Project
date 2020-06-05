@@ -125,7 +125,7 @@ button.close {
 }
 
 .custom-file-input:lang(en)~.custom-file-label::after {
-  content: "Elegir";
+  content: "Seleccionar plantilla";
 }
 header {
   background-color: #fff;
@@ -136,3 +136,8 @@ header {
   height:4px;
   background-color: #3dae2b;
 }
+.navbar {
+  z-index: 1;
+}
+
+
