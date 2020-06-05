@@ -1,6 +1,29 @@
 (function($) {
   "use strict"; // Start of use strict
   var queryString = new Array();
+
+  function getBase64(file) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        var encoded = reader.result.toString().replace(/^data:(.*,)?/, '');
+  
+        if (encoded.length % 4 > 0) {
+          encoded += '='.repeat(4 - encoded.length % 4);
+        }
+  
+        resolve(encoded);
+      };
+  
+      reader.onerror = function (error) {
+        return reject(error);
+      };
+    });
+  }
+  
+
+
   function getUserIP() {
     return $.getJSON('https://api.ipify.org?format=json').then(function(data){
       return data.ip;
@@ -18,10 +41,26 @@
         }
     }
 }
+
 if (queryString["id"] != null) {
-    $("#trleIident").val(queryString["id"]);
+  $("#trleIident").val(queryString["id"]);
+}
+if (queryString["ct"] != null) {
+  if (+(queryString["ct"]) >= 20) {
+    $("#plan3").css("display", "block");
+  }
+  if (+(queryString["ct"]) >= 100) {
+    console.log("mas de 100");
+    $("#plan1").css("display", "block");
+    $("#plan2").css("display", "block");
+  }
+  
 }
 
+$(".btn-contratar").on("click", function(e) {
+  var plan = $(this).data("plan");
+  $("#trleVplanSele").val(plan);
+})
 
   //utility function
 function getFormData(data) {
@@ -42,12 +81,13 @@ function getFormData(data) {
 
   // Show names in file input
   $('input[type="file"]').on("change", function() {
-    let filenames = [];
-    let files = document.getElementById("trleVfileBa64").files;
+    var filenames = [];
+    var files = document.getElementById("excelFile").files;
     if (files.length > 1) {
       filenames.push("Total Files (" + files.length + ")");
     } else {
-      for (let i in files) {
+      var i;
+      for (i in files) {
         if (files.hasOwnProperty(i)) {
           filenames.push(files[i].name);
         }
@@ -66,12 +106,12 @@ function getFormData(data) {
 // Upload excel form
 $("#frm_uploadExcel").validate({
   rules: {
-    trleVfileBa64: {
+    excelFile: {
       required: true
     }
   },
   messages: {
-    trleVfileBa64: {
+    excelFile: {
       required: "Elija la plantilla"
     }
   },
@@ -87,26 +127,64 @@ $("#frm_uploadExcel").validate({
       $(element).removeClass('is-invalid');
   },
   submitHandler: function(form) {
-    //e.preventDefault();
-    var formData = new FormData(document.getElementById("frm_uploadExcel"));
-    $.ajax({
+    
+    
+     getBase64(document.querySelector('input[type="file"]').files[0]).then(function(data) {
+      $("#trleVfileBa64").val(data);
+      var data = $(form).serializeArray();
+      var dataFormatted = JSON.stringify(getFormData(data));
+      
+      $.ajax({
         url: "http://qa-ec2-1315226441.us-east-1.elb.amazonaws.com:8096/api/v1/plan/loadPlantilla",
         type: "post",
-        dataType: "html",
-        data: formData,
+        data: dataFormatted,
         cache: false,
         contentType: false,
         processData: false,
         success: function(data) {
           console.log("done");
-          window.location.href = "http://localhost:3000/planes.html";
+          window.location.href = "http://localhost:3000/resultado.html";
         },
-    }).done(function(res){
-            console.log(res);
+      }).done(function(res){
+              console.log(res);
+      });
+
     });
+
+
   }
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -189,7 +267,7 @@ $("#frm_uploadExcel").validate({
         contentType : "application/json",
         success: function(data) {
           console.log("done");
-          window.location.href = "http://localhost:3000/planes.html?idTrans="+data.payload.id_transaccion;
+          window.location.href = "http://localhost:3000/planes.html?id="+data.payload.id_transaccion+"&ct="+totalCount;
         },
     });
     return false;

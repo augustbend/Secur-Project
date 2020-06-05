@@ -85,7 +85,7 @@
       }
     </style>
 <div class="plan-container">
-    <div class="plan">
+    <div class="plan" id="plan1" style="display:none">
       <span class="plan-title">
         <strong>Plan Regular 1</strong>
       </span>
@@ -100,9 +100,9 @@
         <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 165.00</span></li>
         <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 41.25</span></li>
       </ul>
-      <button type="button" data-plan="1" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
+      <button type="button" data-plan="1" class="btn-contratar btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
-    <div class="plan">
+    <div class="plan" id="plan2" style="display:none">
       <span class="plan-title">
         <strong>Plan Regular 2</strong>
       </span>
@@ -117,9 +117,9 @@
         <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 247.50</span></li>
         <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 41.25</span></li>
       </ul>
-      <button type="button" data-plan="2" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
+      <button type="button" data-plan="2" class="btn-contratar btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
-    <div class="plan">
+    <div class="plan" id="plan3" style="display:none">
       <span class="plan-title">
         <strong>Plan Regular 3</strong>
       </span>
@@ -134,7 +134,7 @@
         <li><span class="plan-key">Prima total x Vigencia x Aseg.</span><br><span class="plan-desc">S/ 80.00</span></li>
         <li><span class="plan-key">Prima mensual x Aseg. inc. IGV</span><br><span class="plan-desc">S/ 20.00</span></li>
       </ul>
-      <button type="button" data-plan="3" id="btn-contratar" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
+      <button type="button" data-plan="3" class="btn-contratar btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
   </div>
 
@@ -162,15 +162,16 @@
           <form method="post" enctype="multipart/form-data" id="frm_uploadExcel" action="">
             <input type="hidden" id="trleVplanSele" name="trleVplanSele" />
             <input type="hidden" id="trleIident" name="trleIident"/>
+            <input type="hidden" id="trleVfileBa64" name="trleVfileBa64"/>
             <div class="form-group row">
               <div class="col-sm-10 d-flex mx-auto">
                 <div class="input-group mb-3">
                   <div class="custom-file text-left">
-                    <input type="file" name="trleVfileBa64" class="custom-file-input" id="trleVfileBa64" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                    <input type="file" class="custom-file-input" name="excelFile" id="excelFile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
                     <label class="custom-file-label" for="customFile">Plantilla</label>
                   </div>
                   <div class="input-group-append">
-                    <button type="submit" name="btn_upload" value="Cargar plantilla" id="btn_upload" class="btn btn-primary">Cargar</button>
+                    <button type="submit" value="Cargar plantilla" id="btn_upload" class="btn btn-primary">Cargar</button>
                   </div>
             </div>
            
