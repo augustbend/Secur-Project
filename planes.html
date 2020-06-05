@@ -37,55 +37,14 @@
     </div>
   </header>
 
-  <div class="container d-flex" style="background-color: #fff;">
-    <h1 class="mb-1 title d-block">Planes</h1>
-
-    <style>
-      .plan-container {
-        margin: auto;
-        width: 1060px;
-        background: #fff;
-        clear: both;
-      }
-      .plan {
-        border: solid 1px #e4e4e4;
-        max-width: 300px;
-        border-radius: 10px;
-        padding: 40px 20px;
-        margin: 20px;
-        float: left;
-        text-align: center;
-      }
-      .plan-title {
-        color: #00609c;
-        font-size: 22px;
-        margin-bottom: 20px;
-        display: block;
-      }
-      .plan-key {
-        color: #00609c;
-        text-transform: uppercase;
-        font-size: 12px;
-        font-weight: 400;
-        letter-spacing: .4px;
-      }
-      .plan-desc {
-        font-size: 18px;
-      }
-      .plan-features {
-        margin-bottom: 30px;
-      }
-      .plan-features li {
-        margin-bottom: 16px;
-      }
-      .plan-divider {
-        font-weight: 700;
-        margin-top: 30px;
-        margin-bottom: 30px;
-      }
-    </style>
-<div class="plan-container">
-    <div class="plan" id="plan1" >
+  <div class="main-container container text-center" id="noPlans" style="display: none;">
+    <img src="img/icon-shield-negative.svg" width="178" />
+    <p class="mt-4">Por el momento no tenemos planes disponibles</p>
+  </div>
+  <div class="main-container container" id="plans">
+    <h1 class="mb-3 title d-block text-center">Planes</h1>
+<div class="d-sm-flex justify-content-center" id="plan-container">
+    <div class="plan align-self-stretch" id="plan1" style="display: none;">
       <span class="plan-title">
         <strong>Plan Regular 1</strong>
       </span>
@@ -102,7 +61,7 @@
       </ul>
       <button type="button" data-plan="1" class="btn-contratar btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
-    <div class="plan" id="plan2" >
+    <div class="plan align-self-stretch" id="plan2" style="display: none;">
       <span class="plan-title">
         <strong>Plan Regular 2</strong>
       </span>
@@ -119,7 +78,7 @@
       </ul>
       <button type="button" data-plan="2" class="btn-contratar btn btn-primary" data-toggle="modal" data-target="#exampleModal2">CONTRATAR</button>
     </div>
-    <div class="plan" id="plan3" >
+    <div class="plan align-self-stretch" id="plan3" style="display: none;">
       <span class="plan-title">
         <strong>Plan Regular 3</strong>
       </span>

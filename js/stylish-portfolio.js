@@ -54,7 +54,10 @@ if (queryString["ct"] != null) {
     $("#plan1").css("display", "block");
     $("#plan2").css("display", "block");
   }
-  
+  if (+(queryString["ct"]) < 20) {
+    $("#noPlans").css("display", "block");
+    $("#plans").css("display", "none");
+  }
 }
 
 $(".btn-contratar").on("click", function(e) {
@@ -286,6 +289,26 @@ $("#frm_uploadExcel").validate({
     }
 
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // Closes the sidebar menu
   $(".menu-toggle").click(function(e) {

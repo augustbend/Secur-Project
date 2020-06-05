@@ -171,19 +171,28 @@ header {
   }
 }
 
-.masthead-container {
+.main-container {
   background: #fff;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 60px;
   padding: 40px 40px;
   border-radius: 20px 20px 0 0;
 }
 
 @media (min-width: 992px) {
-  .masthead-container {
-    margin-top: 350px;
+  .main-container {
     width: 1140px;
     padding: 60px 80px;
+  }
+}
+
+.main-container.hero {
+  margin-top: 100px;
+}
+
+@media (min-width: 992px) {
+  .main-container.hero {
+    margin-top: 300px;
   }
 }
 
@@ -411,6 +420,67 @@ footer.footer .social-link {
 footer.footer .social-link:hover {
   background-color: #2f8521;
   text-decoration: none;
+}
+
+.plan-container {
+  margin: auto;
+  width: 1060px;
+  background: #fff;
+  clear: both;
+}
+
+.plan {
+  border: solid 1px #e4e4e4;
+  max-width: 300px;
+  border-radius: 10px;
+  padding: 40px 20px;
+  margin: 15px;
+  text-align: center;
+}
+
+.plan:hover {
+  box-shadow: 0px 0px 30px #e7f6ff;
+  border: solid 1px #00609c;
+}
+
+.plan-title {
+  color: #00609c;
+  font-size: 22px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.plan-key {
+  color: #00609c;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .4px;
+}
+
+.plan-desc {
+  font-size: 18px;
+}
+
+.plan-features {
+  margin-bottom: 30px;
+}
+
+.plan-features li {
+  margin-bottom: 16px;
+}
+
+.plan-divider {
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 575px) {
+  .plan {
+    margin: auto;
+    margin-bottom: 40px;
+  }
 }
 
 a {

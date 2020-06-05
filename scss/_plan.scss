@@ -1,0 +1,55 @@
+.plan-container {
+    margin: auto;
+    width: 1060px;
+    background: #fff;
+    clear: both;
+  }
+  .plan {
+    border: solid 1px #e4e4e4;
+    max-width: 300px;
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin: 15px;
+    text-align: center;
+
+    &:hover {
+        box-shadow: 0px 0px 30px #e7f6ff;
+        border: solid 1px #00609c;
+    }
+  }
+
+
+
+  .plan-title {
+    color: #00609c;
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .plan-key {
+    color: #00609c;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .4px;
+  }
+  .plan-desc {
+    font-size: 18px;
+  }
+  .plan-features {
+    margin-bottom: 30px;
+  }
+  .plan-features li {
+    margin-bottom: 16px;
+  }
+  .plan-divider {
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 575px) {
+    .plan {
+      margin: auto;
+      margin-bottom: 40px;
+    }
+  }
