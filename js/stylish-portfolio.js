@@ -91,7 +91,7 @@
   // Validate form
   $("#frm_quote").validate({
     rules: {
-      tlreVnameContact: {
+      trleVnameContact: {
         required: true
       },
       trleVemail: {
@@ -123,7 +123,7 @@
       },
     },
     messages: {
-      tlreVnameContact: {
+      trleVnameContact: {
         required: "Ingrese su nombre",
       },
       trleVemail: {
