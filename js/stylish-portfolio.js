@@ -110,11 +110,11 @@
       trleVnameComer: {
         required: true,
       },
-      trleNumtr: {
+      trleNumtrPlani: {
         required: true,
         number: true,
       },
-      trleNumHonor: {
+      trleNumtr: {
         required: true,
         number: true,
       },
@@ -139,11 +139,11 @@
       trleVnameComer: {
         required: "Ingrese la razón social de su empresa",
       },
-      trleNumtr: {
+      trleNumtrPlani: {
         required: "Ingrese el número de trabajadores en planilla",
         number: "Ingrese sólo número",
       },
-      trleNumHonor: {
+      trleNumtr: {
         required: "Ingrese el número de trabajadores en recibo por honorarios",
         number: "Ingrese sólo número",
       },
