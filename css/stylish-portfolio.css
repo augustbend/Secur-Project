@@ -178,13 +178,13 @@ header {
 .main-container {
   background: #fff;
   margin: auto;
-  padding: 40px 40px;
+  padding: 40px 40px 20px 40px;
   border-radius: 20px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main-container {
-    padding: 40px 60px;
+    padding: 40px 60px 20px 60px;
   }
 }
 
@@ -474,6 +474,9 @@ footer.footer .social-link:hover {
   .plan {
     margin: auto;
     margin-bottom: 40px;
+  }
+  .plan:last-child {
+    margin-bottom: 0;
   }
 }
 

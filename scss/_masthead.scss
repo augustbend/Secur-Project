@@ -25,16 +25,18 @@
     }
   }
 }
+
+
 .main-container {
   background: #fff;
   margin: auto;
   //margin-top: 60px;
-  padding: 40px 40px;
+  padding: 40px 40px 20px 40px;
   border-radius: 20px;
 
 
-    @media (min-width: 992px) {
-      padding: 40px 60px;
+    @media (min-width: 768px) {
+      padding: 40px 60px 20px 60px;
     }
 }
 .main-container.hero {
